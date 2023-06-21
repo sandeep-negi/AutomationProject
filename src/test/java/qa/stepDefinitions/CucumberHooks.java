@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import qa.context.TestContext;
 import qa.factory.DriverFactory;
 
+import java.net.MalformedURLException;
+
 public class CucumberHooks {
     private WebDriver driver ;
     private final TestContext context ;
@@ -16,10 +18,12 @@ public class CucumberHooks {
     @BeforeAll
     public static void beforeAll(){
         System.out.println("Before All");
+        DriverFactory.jenkins= System.getProperty("jenkins", "false").trim()
+                .equalsIgnoreCase("true");
     }
 
-    @Before()
-    public void before(Scenario scenario){
+    @Before
+    public void before(Scenario scenario) throws MalformedURLException {
         context.scenarioName = scenario.getName();
         System.out.println("Scenario Name = " + context.scenarioName);
         System.out.println(" Before Thread ID = " + Thread.currentThread().getId() + " == " +scenario.getName());
@@ -27,7 +31,7 @@ public class CucumberHooks {
         context.driver = driver;
     }
 
-    @After()
+    @After
     public void after(Scenario scenario){
         System.out.println(" After Thread ID = " + Thread.currentThread().getId() + " == " +scenario.getName());
         driver.quit();

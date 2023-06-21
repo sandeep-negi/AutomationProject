@@ -4,7 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import qa.context.TestContext;
 import qa.selenium.SeleniumActions;
 import qa.utils.ConfigLoader;
 

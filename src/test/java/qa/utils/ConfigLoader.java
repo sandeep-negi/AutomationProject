@@ -29,6 +29,16 @@ public class ConfigLoader {
     public String getBaseUrl(){
         String prop = properties.getProperty("baseUrl");
         if(prop != null) return prop;
-        else throw new RuntimeException("Property baseUrl is not specified in the stage_config.properties file");
+        else throw new RuntimeException("Property baseUrl is not specified in the file");
+    }
+//    public String getRunMode(){
+//        String prop = properties.getProperty("runmode");
+//        if(prop != null) return prop;
+//        else throw new RuntimeException("Property runmode is not specified in the file");
+//    }
+    public String runHeadless(){
+        String prop = properties.getProperty("headless");
+        if(prop != null) return prop;
+        else throw new RuntimeException("Property run headless is not specified in the file");
     }
 }

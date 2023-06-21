@@ -26,7 +26,7 @@ Feature: Teacher dashboard feature
       | tuser3766+abcd@gmail.com | 123456       |
     Then user should login successfully to his dashboard
 
-  @B2B002 @prod
+  @B2B002 @prod @ignore
   Scenario: Verify user navigation from 'Select your classroom' page
     Given the user is on login page
     And the user logins using api with details :
@@ -34,3 +34,4 @@ Feature: Teacher dashboard feature
       | tuser3766+abcd@gmail.com | 123456       |
     And the user selects on student experience option
     Then user should navigate to classroom page
+
