@@ -20,6 +20,7 @@ public class CucumberHooks {
         System.out.println("Before All");
         DriverFactory.jenkins= System.getProperty("jenkins", "false").trim()
                 .equalsIgnoreCase("true");
+        DriverFactory.headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
     }
 
     @Before
@@ -35,6 +36,7 @@ public class CucumberHooks {
     public void after(Scenario scenario){
         System.out.println(" After Thread ID = " + Thread.currentThread().getId() + " == " +scenario.getName());
         driver.quit();
+        System.out.println("Quit Driver");
     }
     @AfterAll
     public static void afterAll(){

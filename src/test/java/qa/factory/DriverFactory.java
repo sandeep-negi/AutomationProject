@@ -47,7 +47,7 @@ public class DriverFactory {
                         .addArguments("--disable-gpu");
 
 
-                if (ConfigLoader.getInstance().runHeadless().equalsIgnoreCase("true")) {
+                if (headless) {
                     chromeOptions.setHeadless(headless);
                     chromeOptions.addArguments("--window-size=1280,800");
                 }
