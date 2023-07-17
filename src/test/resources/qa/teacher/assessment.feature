@@ -20,4 +20,4 @@ Feature: Assessment feature
       | tuser3766+abcd@gmail.com | 123456       |
     When user deletes the assessment using api having details :
       | klass_id                         | assessment_name | module_id |
-      | 346F36DC5A1E4214AE1C64BF6C53B413 | Addition        | 7         |
+      | 729097FBD593422FAE107C1D1F3C72BB | Addition        | 7         |
